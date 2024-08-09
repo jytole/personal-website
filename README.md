@@ -1,2 +1,3 @@
 # personal-website
-Personal website to showcase my professional experiences
+
+Personal website to showcase Kyler Smith's professional experiences.
