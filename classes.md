@@ -1,8 +1,8 @@
 # Classes
 
-This document highlights all of my undergraduate classes and what I've learned in each of them. This will hopefully make my project reflection easier, as I go back and remember what I've done in my classes.
+This document highlights all of my undergraduate and graduate classes and what I've learned in each of them. This will hopefully make my project reflection easier, as I go back and remember what I've done in my classes.
 
-This is a list of all classes I have attended at MSU, listed by semester. Underneath each semester title is a summary of the semester, including notable developments and milestones. Underneath each class is a description of what I learned.
+This is a list of all classes I have attended at MSU, listed by semester. Underneath each semester title is a summary of the semester, including notable developments and milestones. Underneath each class is a summary of what I learned, as well as any notable assignemnts, projects, or accomplishments to remember.
 
 ## Fall 2020
 
@@ -117,3 +117,23 @@ I studied cognitive neuroscience under Dr. Anna Scarna.
 ### MA 4183: Mathematical Foundations of Machine Learning
 
 ### PSY 4653: Cognitive Science
+
+## Fall 2024
+
+This was my first semester enrolled as a Master's Student. Thanks to the Thrive in Five program, I already had 9 hours of Master's level credit to apply towards my degree, so I was able to complete my Master's in just an additional year after my Bachelor's.
+
+### CSE 7000: DIS on Statistical Analysis in Research
+
+### CSE 8753: Wireless Networks
+
+### CSE 8833: Algorithms
+
+## Spring 2025 - Master's Semester 2
+
+### CSE 6623: Computational Biology
+
+### CSE 8011: Seminar
+
+### CSE 8283: Empirical Software Engineering
+
+### CSE 8813: Theory of Computation

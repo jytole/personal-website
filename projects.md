@@ -16,6 +16,8 @@ Updated an administrative interface to fit within the design of a modern web app
 
 ## Social, Therapeutic, and Robotic Systems Lab
 
+### AudioLDM2 Training and Finetuning Pipeline
+
 ### Website Re-theme
 
 Took the old website and rethemed it to look a little more modern.
@@ -85,3 +87,11 @@ Train and Go: Won the best project!
 Product Dissection: Lil' Gamer
 
 Designed a website for it
+
+## Miscellaneous
+
+### Nand2Tetris Python
+
+(in progress)
+
+A Python implementation of the Nand2Tetris library, for use in Mississippi State's Computer Organization classes.
