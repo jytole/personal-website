@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kyler Smith | Portfolio</title>
+    <meta name="description" content="Portfolio of a Computer Engineering graduate from Mississippi State University and Solution Engineer at International Paper." />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kyler Smith — Portfolio" />
+    <meta property="og:description" content="Portfolio of a Computer Engineering graduate from Mississippi State University and Solution Engineer at International Paper. Featuring software, hardware, and research projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/opengraph.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --background: #f8f9fa;
+        --foreground: #0f172a;
+        --border: #e2e8f0;
+        --card: #ffffff;
+        --muted: #64748b;
+        --primary: #1e40af;
+        --accent: #7c3aed;
+        --font-serif: "Fraunces", serif;
+        --font-sans: "Inter", sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        background: var(--background);
+        color: var(--foreground);
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+        padding: 0.75rem 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--foreground);
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+
+      .hero {
+        padding: 5rem 0;
+        border-bottom: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        gap: 3rem;
+        align-items: center;
+      }
+      .hero-content {
+        order: 1;
+      }
+      .headshot-container {
+        order: 2;
+        width: 180px;
+        height: 180px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 4px solid #fff;
+        box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        background: #eee;
+      }
+      .headshot-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @media (max-width: 768px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 2rem;
+          justify-items: center;
+        }
+        .hero-content {
+          order: 2;
+        }
+        .headshot-container {
+          order: 1;
+        }
+      }
+      .hero-pill {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 99px;
+        font-size: 0.75rem;
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        margin: 0 0 1.5rem;
+      }
+      .hero p {
+        font-size: 1.125rem;
+        color: var(--muted);
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        font-family: var(--font-serif);
+        font-size: 2rem;
+        margin: 4rem 0 2rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+      .card-image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        background: #eee;
+      }
+      .card-category {
+        font-size: 0.75rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .card-title {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 0.75rem;
+      }
+      .card-text {
+        font-size: 0.875rem;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background: #f1f5f9;
+        border-radius: 4px;
+        color: #475569;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: center;
+      }
+      .btn-primary {
+        background: var(--foreground);
+        color: white;
+      }
+      .btn-outline {
+        border: 1px solid var(--border);
+        color: var(--foreground);
+      }
+
+      .footer {
+        padding: 4rem 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.875rem;
+        border-top: 1px solid var(--border);
+        margin-top: 4rem;
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          padding: 3rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">Kyler Smith</div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-pill">Hardware + Software + Research</div>
+          <h1>Portfolio</h1>
+          <p>
+            Solution Engineer at International Paper and MSU Graduate. Building
+            tools that bridge hardware and human-centered software.
+          </p>
+          <div style="display: flex; gap: 1rem">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="https://github.com/jytole" class="btn btn-outline">GitHub</a>
+          </div>
+        </div>
+        <div class="headshot-container">
+          <img 
+            src="images/headshot.JPG" 
+            alt="Kyler Smith" 
+            class="headshot-img"
+          >
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="grid">
+          <!-- Project 1 -->
+          <div class="card">
+            <img src="images/emotibot.jpeg" class="card-image" alt="Emotibot">
+            <div class="card-category">STaRS Lab</div>
+            <h3 class="card-title">Emotibot</h3>
+            <p class="card-text">Crocheted touch-reactive robots with light, sound, and heartbeat to reflect mood states.</p>
+            <div class="tags">
+              <span class="tag">Embedded</span>
+              <span class="tag">Hardware</span>
+              <span class="tag">Circuits</span>
+            </div>
+            <a href="https://www.youtube.com/watch?v=vVfRYySNRzo" class="btn btn-outline">Watch Video</a>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="card">
+            <img src="images/headsetInChair.jpeg" class="card-image" alt="Train and Go">
+            <div class="card-category">Classwork</div>
+            <h3 class="card-title">Train and Go</h3>
+            <p class="card-text">VR wheelchair training system with safety sensors and controller mount for practice.</p>
+            <div class="tags">
+              <span class="tag">VR</span>
+              <span class="tag">Sensors</span>
+              <span class="tag">Systems</span>
+            </div>
+            <a href="#" class="btn btn-outline">Details</a>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="card">
+            <img src="images/lilgamer-thumbnail.JPG" class="card-image" alt="Product Dissection">
+            <div class="card-category">Classwork</div>
+            <h3 class="card-title">Product Dissection: Lil' Gamer</h3>
+            <p class="card-text">Documenting teardown and functional/circuit diagrams of a consumer device.</p>
+            <div class="tags">
+              <span class="tag">Reverse Eng</span>
+              <span class="tag">Circuits</span>
+              <span class="tag">Web</span>
+            </div>
+            <a href="lil-gamer/index.html" class="btn btn-outline">View Dissection</a>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="card">
+            <div class="card-category">International Paper</div>
+            <h3 class="card-title">Cert Visualization</h3>
+            <p class="card-text">Dashboard to explore digital certificate metadata with fast CRUD actions.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Dashboards</span>
+              <span class="tag">UX</span>
+            </div>
+            <a href="#" class="btn btn-outline">Internal Project</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top: 6rem;">
+        <h2 class="section-title">About Me</h2>
+        <p style="color: var(--muted); max-width: 700px; font-size: 1.125rem;">
+          I build systems that feel precise and human-friendly: internal dashboards that reduce friction, research tools that make complex models approachable, and hardware projects that invite interaction. I’m especially interested in work that connects software engineering with physical computing, security, and thoughtful product design.
+        </p>
+      </section>
+
+      <section id="contact" style="margin-top: 6rem;">
+        <h2 class="section-title">Contact</h2>
+        <div class="card" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+          <p style="margin: 0; color: var(--muted);">Interested in collaborating?</p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="mailto:kylerssmith2835@gmail.com" class="btn btn-primary">Send Email</a>
+            <a href="https://linkedin.com/in/kss445" class="btn btn-outline">LinkedIn</a>
+            <a href="https://linkedin.com/in/kyler-smith" class="btn btn-outline">Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        Built with help from Replit AI &copy; 2026 Kyler Smith
+      </div>
+    </footer>
+  </body>
+</html>
