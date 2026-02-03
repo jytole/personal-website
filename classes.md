@@ -182,7 +182,7 @@ Languages: Nand2Tetris (HDL, ASM, binary)
 
 ### ECE 4532: CPE Design I
 
-The senior design class for my major. In this class we began our project and learned what process we should follow to complete its design and implementation.
+The senior design class for my major. In this class we began our project and learned what process we should follow to complete its design and implementation. My team's project was entitled "Train and Go." We developed a VR experience that allowed motorized wheelchair users to practice maneuvering in their wheelchair in virtual spaces without the dangers of a physical space.
 
 ### GE 3513: Technical Writing
 
@@ -220,13 +220,19 @@ This class taught me about fundamental concepts behind an operating system like 
 
 ### ECE 4542: CPE Design II
 
+The senior design class for my major. In this class we finished our project and presented it to the public. My team won the best design for fall of 2023.
+
 ### ECE 4724: Embedded Systems
+
+This class gave me a technical deep-dive into the use of microprocessors in engineered computing solutions. I learned about conversions between analog and digital, calculations and considerations for which microprocessor specifications are required for a solution to work, and the programming of machine-level logic.
 
 ## Spring 2024
 
 ### ECE 4713: Computer Architecture
 
 ### HON 4093: Honors Thesis
+
+This class was a self-led course which allowed me time in my schedule to work on my Honors Thesis.
 
 ### MA 4183: Mathematical Foundations of Machine Learning
 

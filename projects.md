@@ -50,7 +50,7 @@ I designed a lab study with participants and opinion gathering. This study was a
 
 I crafted an honors thesis using the Therabot Audio work I completed.
 
-This thesis, documenting the audio generation system and participatory design study, is available at: 
+This thesis, documenting the audio generation system and participatory design study, is available upon request.
 
 ## Center for Cyber Innovation (CCI)
 
