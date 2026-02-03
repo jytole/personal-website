@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lil' Gamer Product Dissection</title>
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free HTML5 Website Template by uicookies.com" />
+    <meta name="keywords" content="free bootstrap 4, free bootstrap 4 template, free website templates, free html5, free template, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="uicookies.com" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    
+    <aside class="probootstrap-aside js-probootstrap-aside">
+      <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
+      <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+        
+        <a href="index.html" class="mb-2 d-block probootstrap-logo">Fisher Price: Lil' Gamer</a>
+        <p class="mb-0">A product dissection of the<br><a href="https://shop.mattel.com/products/laugh-learn-lil-gamer-gtj65" target="_blank">Fisher Price Lil' Gamer</a></p>
+      </div>
+      <div class="probootstrap-overflow">
+        <nav class="probootstrap-nav">
+          <ul>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="../index.html">Back to Portfolio</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="index.html">Home</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="intro.html">Introduction</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="market.html">Market Information</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="photos.html">Photo Journal</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="operation.html">Product Operation</a></li>
+            <li class="probootstrap-animate active" data-animate-effect="fadeInLeft"><a href="analysis.html">Product Analysis</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="reassembly.html">Product Reassembly</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft"><a href="lessons.html">Lessons Learned</a></li>
+          </ul>
+        </nav>
+        <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
+          <ul class="list-unstyled d-flex probootstrap-aside-social">
+            <li><a href="https://www.github.com/jytole" class="p-2"><span class="icon-github"></span></a></li>
+            <li><a href="https://www.linkedin.com/in/kss445/" class="p-2"><span class="icon-linkedin"></span></a></li>
+          </ul>
+          <p>Template &copy; 2017 <a href="https://uicookies.com/" target="_blank">uiCookies:Aside</a>. <br> All Rights Reserved.</p>
+        </footer>
+      </div>
+    </aside>
+
+
+    <main role="main" class="probootstrap-main js-probootstrap-main">
+      <div class="probootstrap-bar">
+        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
+        <div class="probootstrap-main-site-logo"><a href="index.html">Dissection</a></a></div>
+      </div>
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-lg-12">
+            <div class="row">
+              <div class="col-xl-12 col-lg-16 mx-auto">
+                <h1 class="mb-3">Product Analysis</h1>
+                <h5>High-Level Operation</h5>
+                <p class="mb-2"><img src="images/HMIDiagram.png" alt="A high-level i/o schematic" class="img-fluid" style="margin-left: auto; margin-right: auto; display: block;"></p>
+                <p>
+                  This page showcases the analysis of the Fisher-price: Laugh & Learn: Lil' Gamer. A National Instruments Virtual Bench was used for some measurements, while a generic battery powered multimeter was used for others to validate some claims. We begin above with a high level schematic and transition downwards into more detail towards a bill of materials. The Lil' Gamer features eight input switches, where seven are used during operation and one is the power switch. One PCB footprint on the schematic later on this page represents a ninth switch, but this switch does not exist on the final product and might be an engineering test switch.
+                </p>
+                <p class="mb-2"><img src="images/CyclesDiagram.png" alt="A high-level operational diagram" class="img-fluid"></p>
+                <p>
+                  In the above diagram, the left cycle operates separately from the right cycle. If the right cycle is interrupted by the left cycle or a game cartridge press, it resets to "say direction" or "say number," depending on what "level" is active. The game cartridge is not featured because it does not follow such a complex sequence, but it does follow a pattern of eight songs. Four of these songs feature lyrics and can only be activated by pressing the cartridge. The other four songs are the same songs that play when the cycle of the letter buttons reaches the "song" state. During any song without lyrics, buttons can be pressed to cause sound effects to overlap the song.
+                </p>
+                <hr>
+                <h5>Electrical Analysis</h5>
+                <p>
+                  The table below showcases the electrical characteristics as measured by a multimeter during different phases of operation. To obtain "expected" voltage and current measurements, the voltage and current across the battery terminals was measured while the product was turned on but not outputting or processing anything. To obtain "extreme" voltage and current measurements, the same terminals were measured after a button press, comparing different button presses and sequences to obtain a maximum potential voltage and current. Current was measured across the positive terminal only, because measuring it to ground caused a short circuit. Once these values were obtained, they were multiplied together to get expected and extreme power consumption, and this power consumption was compared to the <a href="https://en.wikipedia.org/wiki/AAA_battery">combined 2.43wH</a> of the three source Zinc-Carbon AAA batteries.
+                </p>
+                <p>
+                  A clock signal could not be found along the terminals of the MCU, but the speaker's frequency was estimated from the waveform gathered during the playback of audio (see the <a href="operation.html#audio">operation</a> page) and reported in both columns. Amperage and voltage calculations remained consistent for one second, so we will use one second as the base point for the watt-hour load of the system. By dividing the second-long power calculations by the one second it stays active, we can estimate the wH load of the system.
+                </p>
+                <table class="table">
+                  <tr>
+                    <th>Value</th>
+                    <th>Expected</th>
+                    <th>Extreme</th>
+                  </tr>
+                  <tr>
+                    <th>Voltage</th>
+                    <td>4.54V</td>
+                    <td>4.49V</td>
+                  </tr>
+                  <tr>
+                    <th>Current</th>
+                    <td>3µA</td>
+                    <td>15µA</td>
+                  </tr>
+                  <tr>
+                    <th>Power Consumption</th>
+                    <td>49mWh</td>
+                    <td>242mWh</td>
+                  </tr>
+                  <tr>
+                    <th>Battery Life</th>
+                    <td>50 Hours</td>
+                    <td>10 Hours</td>
+                  </tr>
+                  <tr>
+                    <th>Frequency</th>
+                    <td>200kHz</td>
+                    <td>200kHz</td>
+                  </tr>
+                </table>
+                <p class="mb-2"><img src="images/pcb.jpg" alt="The detached PCB of the Lil' Gamer" class="img-fluid" style="margin-left: auto; margin-right: auto; display: block;"></p>
+                <p>
+                  Below is an estimated schematic of the Lil' Gamer. It was obtained by observing the printed routes on the PCB (above) and performing a continuity test on some points that could not be seen through obvious routing. One such invisible route is the path from C2 to pin 2 of the MCU.
+                </p>
+                <p class="mb-2"><img src="images/schematic.png" alt="An estimated full electronics schematic of the Lil' Gamer" class="img-fluid" style="margin-left: auto; margin-right: auto; display: block;"></p>
+                <p>
+                  The eight input switches are all capable of connecting the output of a ninth power switch (a regulated 4.5V source when the device is switched on, and 0V when switched off) to the MCU through input pins, as mapped in the input/output table below. Pins 2 and 3 on the MCU send an audio signal through an RLC circuit to the speaker. Pins 22, 23, and 24 output signals through resistors to the RGB LED in the form of low-true logic to activate particular colors, also mapped in the input/output table below. The schematic's green and blue terminals are incorrectly labeled, because I could not find a schematic library component to exactly match the LED on the board. The low-true logic means that (for example) pin 22 remains high (4.5V) while the system is on and the LED's red color is off, but when pin 22 is low (1.5V), the LED is displaying red.
+                </p>
+                <table class="table">
+                  <tr>
+                    <th>Descriptive Name</th>
+                    <th>PCB Label</th>
+                    <th>MCU Pin</th>
+                    <th>Input / Output</th>
+                  </tr>
+                  <tr>
+                    <th>Game Cartridge</th>
+                    <td>S1</td>
+                    <td>P5</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>Left Button</th>
+                    <td>S2</td>
+                    <td>P6</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>Right Button</th>
+                    <td>S3</td>
+                    <td>P10</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>Up Button</th>
+                    <td>S4</td>
+                    <td>P8</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>Down Button</th>
+                    <td>S5</td>
+                    <td>P7</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>A Button</th>
+                    <td>S6</td>
+                    <td>P11</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>B Button</th>
+                    <td>S7</td>
+                    <td>P12</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>Power Switch</th>
+                    <td>S8</td>
+                    <td>P4</td>
+                    <td>Power</td>
+                  </tr>
+                  <tr>
+                    <th>Missing Button</th>
+                    <td>S9</td>
+                    <td>P9</td>
+                    <td>Input</td>
+                  </tr>
+                  <tr>
+                    <th>Speaker +</th>
+                    <td>SPK1+</td>
+                    <td>P3</td>
+                    <td>Output</td>
+                  </tr>
+                  <tr>
+                    <th>Speaker -</th>
+                    <td>SPK1-</td>
+                    <td>P2</td>
+                    <td>Output</td>
+                  </tr>
+                  <tr>
+                    <th>Red LED</th>
+                    <td>LED1-R</td>
+                    <td>P22</td>
+                    <td>Output</td>
+                  </tr>
+                  <tr>
+                    <th>Green LED</th>
+                    <td>LED1-G</td>
+                    <td>P23</td>
+                    <td>Output</td>
+                  </tr>
+                  <tr>
+                    <th>Blue LED</th>
+                    <td>LED1-B</td>
+                    <td>P24</td>
+                    <td>Output</td>
+                  </tr>
+                </table>
+                <p>
+                  The PCB has a footprint and routing for S9 that suggests it could be a hard-plastic button soldered onto the board, but a part for S9 is not on the board. The structure of the plastic casing has a circular blue removable piece that goes directly on top of the spot for S9, which leads me to believe that S9 was a factory testing button to speed up the quality control process. S9 may have run a test function to output various values proving the circuit's correctness, or S9 may have been a reset button. It is difficult to tell from only the PCB.
+                </p>
+                <h5>Bill of Materials</h5>
+                <h6>Electrical</h6>
+                <p>
+                  Contained in this section is the electrical bill of materials. It was obtained by surveying <a href="https://www.digikey.com/">Digikey</a> for parts comparable to what appear on the PCB. The MCU was the least comparable component, because the labeled number (GPCE 1516A ADBPS600 2146) did not appear to correspond to anything manufactured online, and I could not recognize the logo printed on the component. Instead of finding an exact match, I found a 24-pin MCU that contained on-board flash memory that would be able to store the audio files and internal logic, as well as latching state-memory. RJ3 and S9 are not on the PCB, so they are excluded from the Electrical Bill of Materials.
+                </p>
+                <table class="table" style="font-size: 13px;">
+                  <tr>
+                    <th>Manufacturer</th>
+                    <th>Manufacturer Part Number</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Cost Per Unit (USD)</th>
+                    <th>Total Cost (USD)</th>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/microchip-technology/ATF22LV10C-10XU/1008577">Microchip Technology</a></td>
+                    <td>ATF22LV10C-10XU</td>
+                    <td>24-Pin MCU with Flash Memory and Latches</td>
+                    <td>1</td>
+                    <td>2.49</td>
+                    <td>2.49</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/murata-electronics/LQG15WH1N8B02D/19560808">Murata Technology</a></td>
+                    <td>LQG15WH1N8B02D</td>
+                    <td>SMD Inductor</td>
+                    <td>4</td>
+                    <td>0.25</td>
+                    <td>1.00</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0402ZT0R00/1756905">Stackpole Electronics Inc</a></td>
+                    <td>RMCF0402ZT0R00</td>
+                    <td>0 Ohm Resistor</td>
+                    <td>4</td>
+                    <td>0.10</td>
+                    <td>0.40</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/bourns-inc/CR0402-FX-1002GLF/3593192">Bourns Inc</a></td>
+                    <td>CR0402-FX-1002GLF</td>
+                    <td>10K Ohm SMD Resistor</td>
+                    <td>2</td>
+                    <td>0.10</td>
+                    <td>0.20</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/bourns-inc/CR0402-FX-1200GLF/3783120">Bourns Inc</a></td>
+                    <td>CR0402-FX-1200GLF</td>
+                    <td>120 Ohm SMD Resistor</td>
+                    <td>1</td>
+                    <td>0.10</td>
+                    <td>0.10</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF1206JT150R/1757485">Stackpole Electronics Inc</a></td>
+                    <td>RMCF1206JT150R</td>
+                    <td>150 Ohm SMD Resistor</td>
+                    <td>2</td>
+                    <td>0.10</td>
+                    <td>0.20</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/murata-electronics/GRM0335C1E100JA01D/4358173">Murata Electronics</a></td>
+                    <td>GRM0335C1E100JA01D</td>
+                    <td>Small ceramic SMD Capacitor</td>
+                    <td>8</td>
+                    <td>0.10</td>
+                    <td>0.80</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05A104KA5NNNC/3886701">Samsung Electro-Mechanics</a></td>
+                    <td>CL05A104KA5NNNC</td>
+                    <td>Large ceramic SMD Capacitor</td>
+                    <td>1</td>
+                    <td>0.10</td>
+                    <td>0.10</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/875105242006/5147570">Würth Elektronik</a></td>
+                    <td>875105242006</td>
+                    <td>47uF 10V Capacitor</td>
+                    <td>2</td>
+                    <td>0.50</td>
+                    <td>1.00</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/c-k/PN11SHNA03QE/262655">C&K</a></td>
+                    <td>PN11SHNA03QE</td>
+                    <td>Spring Push Switch, SPDT</td>
+                    <td>1</td>
+                    <td>1.64</td>
+                    <td>1.64</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/e-switch/EG1201A/101723">E-Switch</a></td>
+                    <td>EG1201A</td>
+                    <td>Power Switch, SPDT</td>
+                    <td>1</td>
+                    <td>0.76</td>
+                    <td>0.76</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/cui-devices/CMS-28588N-L152/6137743">CUI Devices</a></td>
+                    <td>CMS-28588N-L152</td>
+                    <td>Speaker</td>
+                    <td>1</td>
+                    <td>3.97</td>
+                    <td>3.97</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/inolux/IN-S126TASRGB/7604909">Inolux</a></td>
+                    <td>IN-S126TASRGB</td>
+                    <td>RGB LED</td>
+                    <td>1</td>
+                    <td>0.55</td>
+                    <td>0.55</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.digikey.com/en/products/detail/keystone-electronics/2479/303824">Keystone Electronics</a></td>
+                    <td>2479</td>
+                    <td>3 AAA Battery Pack</td>
+                    <td>1</td>
+                    <td>1.81</td>
+                    <td>1.81</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.walmart.com/ip/Rayovac-High-Energy-AAA-Batteries-16-Pack-Triple-A-Batteries/20512707">Rayovac</a></td>
+                    <td>E302343201</td>
+                    <td>AAA Battery</td>
+                    <td>3</td>
+                    <td>0.81</td>
+                    <td>2.43</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>17.45</th>
+                  </tr>
+                </table>
+                <h6>Non-electrical</h6>
+                <table class="table">
+                  <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Cost Per Unit (USD)</th>
+                    <th>Total Cost (USD)</th>
+                  </tr>
+                  <tr>
+                    <td>Plastic Casing (96 g <a href="https://www.library.msstate.edu/services/print">3D Printed</a>)</td>
+                    <td>1</td>
+                    <td>19.20</td>
+                    <td>19.20</td>
+                  </tr>
+                  <tr>
+                    <td>Tetris Pieces (12 g <a href="https://www.library.msstate.edu/services/print">3D Printed</a>)</td>
+                    <td>1</td>
+                    <td>2.40</td>
+                    <td>2.40</td>
+                  </tr>
+                  <tr>
+                    <td>Face Buttons (11 g <a href="https://www.library.msstate.edu/services/print">3D Printed</a>)</td>
+                    <td>1</td>
+                    <td>2.20</td>
+                    <td>2.20</td>
+                  </tr>
+                  <tr>
+                    <td>Fake Side Button (3 g <a href="https://www.library.msstate.edu/services/print">3D Printed</a>)</td>
+                    <td>1</td>
+                    <td>0.60</td>
+                    <td>0.60</td>
+                  </tr>
+                  <tr>
+                    <td>Fake Game Cartridge (19 g <a href="https://www.library.msstate.edu/services/print">3D Printed</a>)</td>
+                    <td>1</td>
+                    <td>3.80</td>
+                    <td>3.80</td>
+                  </tr>
+                  <tr>
+                    <td>Fake Screen (8 g <a href="https://www.library.msstate.edu/services/print">3D Printed</a>)</td>
+                    <td>1</td>
+                    <td>1.60</td>
+                    <td>1.60</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.mcmaster.com/92005A029">Screws</a></td>
+                    <td>11</td>
+                    <td>0.05</td>
+                    <td>0.55</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://a.co/d/25eZw4a">Silicon Button Pads</a></td>
+                    <td>6</td>
+                    <td>0.11</td>
+                    <td>0.66</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <th></th>
+                    <th></th>
+                    <th>31.01</th>
+                  </tr>
+                </table>
+                <p>
+                  From this estimated bill of materials considering screws purchased in bulk and plastic components 3D printed from the Mississippi State Library at $0.20 per gram, the Fisher-price: Laugh & Learn: Lil' Gamer comes out to a price of $48.46. This price could be greatly reduced with parts purchased in bulk or manufactured in-house.
+                </p>
+                <p>
+                  Now that the product has been fully analyzed, it is time to put it back together in the <a href="reassembly.html">Product Reassembly</a> page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END row -->
+      </div>
+
+      <div class="container-fluid d-md-none">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled d-flex probootstrap-aside-social">
+              <li><a href="https://www.github.com/jytole" class="p-2"><span class="icon-github"></span></a></li>
+              <li><a href="https://www.linkedin.com/in/kss445/" class="p-2"><span class="icon-linkedin"></span></a></li>
+            </ul>
+            <p>Template &copy; 2017 <a href="https://uicookies.com/" target="_blank">uiCookies:Aside</a>. <br> All Rights Reserved. Designed by <a href="https://uicookies.com/" target="_blank">uicookies.com</a></p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <script src="js/main.js"></script>
+    
+    
+  </body>
+</html>
